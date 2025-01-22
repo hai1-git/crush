@@ -1,0 +1,99 @@
+.GifLetter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 9999;
+  display: flex;
+}
+.content-Letter {
+  position: relative;
+  margin: auto;
+  width: 450px;
+  height: 380px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  animation: anmContentLetterGifBox 0.9s linear forwards;
+  z-index: 9999;
+}
+
+@keyframes anmContentLetterGifBox {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.img-icon {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-image: url('../../../../public/image/chill.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 9999;
+  right: -45%;
+  top: 20%;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  transition: all 0.3s linear;
+}
+
+.rose {
+  width: 200px;
+  height: 200px;
+  background-image: url('../../../../public/image/traitim.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+.rose-1 {
+  left: 0;
+  animation: rose1 5.3s linear infinite;
+}
+
+@keyframes rose1 {
+  0%,
+  100% {
+    transform: translateY(80%);
+  }
+  50% {
+    transform: translateY(-30%);
+  }
+}
+.rose-2 {
+  right: 0;
+  animation: rose2 5.3s linear infinite;
+}
+
+@keyframes rose2 {
+  0%,
+  100% {
+    transform: translateY(80%);
+  }
+  50% {
+    transform: translateY(-30%);
+  }
+}
+@media screen and (max-width: 768px) {
+  .content-Letter {
+    width: 260px;
+    height: 300px;
+  }
+  .img-icon {
+    width: 100px;
+    height: 100px;
+    right: -10%;
+    top: 80%;
+  }
+}

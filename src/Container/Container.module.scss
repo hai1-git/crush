@@ -1,0 +1,71 @@
+.Container-letter {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: pink;
+}
+.letter {
+  width: 300px;
+  height: 250px;
+  background-image: url(../../public/image/letters.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+  transform: scale(1);
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+  position: relative;
+  transition: all 0.6s linear;
+}
+.hide {
+  animation: letterHide 1.2s linear forwards;
+}
+@media screen and (max-width: 768px) {
+  .letter {
+    width: 200px;
+    height: 150px;
+  }
+}
+@keyframes letterHide {
+  0% {
+    top: 0; /* Đảm bảo có giá trị ban đầu cho top */
+    opacity: 1; /* Giá trị ban đầu cho opacity */
+    pointer-events: auto; /* Giá trị ban đầu cho pointer-events */
+    transform: rotateZ(0deg);
+  }
+  100% {
+    opacity: 0; /* Ẩn phần tử */
+    transform: rotateZ(100deg); /* Quay phần tử */
+    top: 30%; /* Di chuyển phần tử */
+    pointer-events: none; /* Vô hiệu hóa sự kiện chuột */
+  }
+}
+.cursor-letter {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url(../../public/image/cursor.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+  transition: all 0.7s linear;
+  left: -50%;
+  top: 20%;
+  transform: rotateZ(80deg);
+  animation: clickOnLetter 2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes clickOnLetter {
+  0%,
+  100% {
+    left: -30%;
+  }
+  50% {
+    left: -50%;
+  }
+}
